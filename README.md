@@ -13,6 +13,9 @@
 - EJS
 - Javascript
 
+#### Trello Board
+[Project 2](https://trello.com/invite/b/uhqPk6dR/ATTI642de943109f89b04ee55b427e464f68BF57A529/named-space-card-game) 
+
 #### Tasks
 - [ ] Establish main framework and server
 - [ ] Set up MongoDB connection
