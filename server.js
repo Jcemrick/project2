@@ -9,12 +9,19 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const cardsRouter = require('./controllers/nscg')
+const mongoose = require('mongoose')
 
+// Create express app
 const app = express();
 
 const PORT = process.env.PORT || '4321';
 
+mongoose.connect(process.env.DATABASE_URL)
 
+mongoose.connection
+.on('open', () => console.log("Connected to MongoDB!"))
+.on('close', () => console.log("Disconnected from MongoDB!"))
+.on('error', () => console.log(error))
 
 ///////////////////////////////////////////////
 // Middleware
