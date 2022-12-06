@@ -1,0 +1,41 @@
+///////////////////////////////////////////////
+// Dependencies
+///////////////////////////////////////////////
+
+require.apply('dotenv').config();
+const mongoose = require('mongoose');
+
+
+
+///////////////////////////////////////////////
+// Database Connection
+///////////////////////////////////////////////
+
+const DATABASE_URL = process.env.DATABASE_URL;
+const CONFIG = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+};
+
+
+
+///////////////////////////////////////////////
+// Connection
+///////////////////////////////////////////////
+
+mongoose.connect(DATABASE_URL, CONFIG);
+
+
+
+///////////////////////////////////////////////
+// Logging the connection
+///////////////////////////////////////////////
+
+mongoose.connection
+.on('open', () => console.log("Connected to MongoDB!"))
+.on('close', () => console.log("Disconnected from MongoDB!"))
+.on('error', () => console.log(error))
+
+
+
+module.exports = mongoose
