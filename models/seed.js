@@ -1,0 +1,6 @@
+///////////////////////////////////////////////
+// Dependencies
+///////////////////////////////////////////////
+require('dotenv').config();
+const mongoose = require('./connection');
+const Card = require('./card');
