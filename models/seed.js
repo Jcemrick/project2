@@ -15,7 +15,7 @@ const defense = randomNumber;
 const newDeck = function() {
     const newDeckData = [];
     for (i = 0; i <= 150; i++) {
-        newDeckData.push({ name: `Card`, attack: attack, defense: defense, cardId: newCardId[i] })
+        newDeckData.push({ name: `Card ${newCardId[i]}`, attack: attack, defense: defense, cardId: newCardId[i] })
     }
     return newDeckData
 }
