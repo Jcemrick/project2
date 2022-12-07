@@ -24,7 +24,9 @@ function errorHandler(error, res) {
 // Routes - INDUCES
 ///////////////////////////////////////////////
 /// SEED ///
+router.get('/seed', (req, res) => {
 
+})
 
 
 
