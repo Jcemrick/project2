@@ -33,7 +33,7 @@ function cardLimit(count) {
 };
 
 
-const Deck = model('Deck', deckSchema)
+const Card = model('Card', deckSchema)
 
 
-module.exports = Deck
+module.exports = Card
