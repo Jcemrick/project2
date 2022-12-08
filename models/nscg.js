@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////
 
 const mongoose = require('./connection');
+const { Schema , model} = mongoose
 
 ///////////////////////////////////////////////
 // Schema
@@ -15,25 +16,12 @@ const cardSchema = new Schema({
     cardId: {type: Number, required: true, unique: true}
 });
 
-const deckSchema = new mongoose.Schema({
-        playerId: {
-            type: Number, 
-            required: true, 
-            unique: true
-        },
-        cards: {
-            count: [cardSchema],
-            validate: [cardLimit, 'Deck cannot exceed 30 cards']
-        }
-
+const deckSchema = new Schema({      
+        cards: [cardSchema]
 });
 
-function cardLimit(count) {
-    return count.length <= 30
-};
+
+const Deck = model('Deck', deckSchema)
 
 
-const Card = model('Card', deckSchema)
-
-
-module.exports = Card
+module.exports = Deck
