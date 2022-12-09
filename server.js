@@ -4,8 +4,6 @@
 
 require('dotenv').config();
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const cardsRouter = require('./controllers/nscg')
@@ -14,14 +12,22 @@ const mongoose = require('mongoose')
 // Create express app
 const app = express();
 
+// Port defined 
 const PORT = process.env.PORT || '4321';
 
-mongoose.connect(process.env.DATABASE_URL)
+// // DB connection
+// const DATABASE_URL = process.env.DATABASE_URL
+// const CONFIG = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
 
-mongoose.connection
-.on('open', () => console.log("Connected to MongoDB!"))
-.on('close', () => console.log("Disconnected from MongoDB!"))
-.on('error', () => console.log(error))
+// mongoose.connect(DATABASE_URL, CONFIG)
+
+// mongoose.connection
+// .on('open', () => console.log("Connected to MongoDB!"))
+// .on('close', () => console.log("Disconnected from MongoDB!"))
+// .on('error', () => console.log(error))
 
 ///////////////////////////////////////////////
 // Middleware
@@ -30,7 +36,6 @@ mongoose.connection
 app.use(morgan('tiny'));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
-app.use(cookieParser());
 app.use('/public', express.static('public'));
 
 
@@ -40,10 +45,10 @@ app.use('/public', express.static('public'));
 ///////////////////////////////////////////////
 
 app.get('/', (req, res) => {
-    res.redirect('/index')
+    res.redirect('/login')
 });
 
-app.use('/index', cardsRouter)
+app.use('/login', cardsRouter)
 
 
 
