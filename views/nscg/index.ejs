@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Named Space Card Game</title>
+</head>
+<body>
+    <div class="cardshow">
+        <% for (deck of decks) { %>
+
+            <% for (i = 0; i < deck.cards.length; i++) { %>
+        <ul>
+            <h3> <%= deck.cards[i].name %> </h3>
+            <li> Attack: <%= deck.cards[i].attack %> </li>
+            <li> Defense: <%= deck.cards[i].defense %> </li>
+        </ul>   
+        <% } } %>
+    </div>
+</body>
+</html>
