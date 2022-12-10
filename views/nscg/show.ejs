@@ -5,12 +5,24 @@
     <title><%= cards.name %> Info</title>
 </head>
 <body>
-    <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
-    <h1> <%= cards.name %> </h1>
-    <p> Attack: <%= cards.attack %> </p>
-    <p> Defense: <%= cards.defense %> </p>
-    <p> Description: <%= cards.description %> </p>
-    <a href="/index/<%= cards._id %>/edit" title="Upgrade"><img src="../../public/wrench.png" width="1.5%"></a>
-    <a href="/index" title="Home"><img src="https://www.clipartmax.com/png/small/4-41237_free-icons-png-new-home-icon.png" width="2%"></a>
+    <header class="indexheader"> 
+        <h1> <%= cards.name %> </h1>
+        <div class="headerlink">
+        <a href="/index/<%= cards._id %>/edit"><button>Upgrade</button></a>    
+        <a href="/index/new"><button>Card Shop</button></a>
+        <a href=""><button>Account</button></a>
+        </div>
+    </header>
+    <img class="showimg" src="../../public/blueprint.jpeg" alt="cardimage"> 
+    <div class="container">
+        <div class="card">
+                <div class="cardcontainer">
+                    <p> Attack: <%= cards.attack %> </p>
+                    <p> Defense: <%= cards.defense %> </p>
+                    <p> Description: <%= cards.description %> </p>
+                </div>
+        </div>
+    </div>
+    <div>
 </body>
 </html>

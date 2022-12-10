@@ -5,12 +5,23 @@
     <title>Upgrade <%= cards.name %></title>
 </head>
 <body>
-    <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
-    <h1> <%= cards.name %> </h1>
-    <form action="/index/<%= cards._id %>?_method=PUT" method="POST">
-        <p>Attack: </p><input type="text" name="attack" value="<%= cards.attack %>">
-        <p>Defense: </p><input type="text" name="defense" value="<%= cards.defense %>"><br>
-        <input type="submit" value="Upgrade Now!">
-    </form>
+    <header class="indexheader"> 
+        <h1> <%= cards.name %> </h1>
+        <div class="headerlink">
+            <a href="/index/new"><button>Card Shop</button></a>
+            <a href=""><button>Account</button></a>
+        </div>
+    </header>
+    <img class="showimg" src="../../public/blueprint.jpeg" alt="cardimage"> 
+        <div class="container">
+            <div class="cardcontainer">
+                <form action="/index/<%= cards._id %>?_method=PUT" method="POST">
+                    <p>Attack: </p><input type="text" name="attack" value="<%= cards.attack %>">
+                    <p>Defense: </p><input type="text" name="defense" value="<%= cards.defense %>"><br>
+                    <input type="submit" value="Upgrade Now!">
+                    <a href="/index/"><button>Cancel</button></a>
+                </form>
+            </div>
+        </div>
 </body>
 </html>
