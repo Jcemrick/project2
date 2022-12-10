@@ -16,7 +16,11 @@ const newDeck = function() {
             name: `Card ${i+1}`, 
             attack: randomNumber(), 
             defense: randomNumber(), 
-            cardId: i+1
+            cardId: i+1,
+            description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum!`
         })
     }
     return newDeckData
@@ -26,13 +30,14 @@ const newDeck = function() {
 
 mongoose.connection.on('open', () => {
     // Data defined
-            const seedDeck = [
-                { cards: newDeck()}
-            ]
+            // const seedDeck = [
+            //     { cards: newDeck()}
+            // ]
+            newDeck()
     // Delete the previous data
     const seedDB = async () => {
         await Deck.deleteMany({});
-        await Deck.insertMany(seedDeck);
+        await Deck.insertMany(newDeck());
     }
     seedDB().then(() => {
         mongoose.connection.close();
