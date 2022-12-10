@@ -3,10 +3,7 @@
 ///////////////////////////////////////////////
 
 const express = require('express');
-const Deck = require('../models/nscg')
-const jsdom = require('jsdom');
-const dom = new jsdom.JSDOM()
-const $ = require('jquery')(dom.window);
+const Cards = require('../models/nscg')
 
 
 ///////////////////////////////////////////////
@@ -36,8 +33,8 @@ function errorHandler(error, res) {
 
 /// INDEX ///
 router.get('/',  async (req, res) => {
-    const decks = await Deck.find({}).catch((error) => errorhandler (error, res))
-    res.render('nscg/index.ejs', {decks})
+    const cards = await Cards.find({}).catch((error) => errorhandler (error, res))
+    res.render('nscg/index.ejs', {cards})
 });
 
 
@@ -51,36 +48,36 @@ router.get('/new', (req, res) => {
 
 /// DESTROY ///
 router.delete('/:id', async (req, res) => {
-    await Deck.findByIdAndRemove(req.params.id).catch((error) => errorHandler (error, res))
+    await Cards.findByIdAndRemove(req.params.id).catch((error) => errorHandler (error, res))
     res.redirect('/nscg')
 });
 
 
 /// UPDATE ///
 router.put('/:id', async (req, res) => {
-    await Deck.findByIdAndUpdate(req.params.id, req.body)
+    await Cards.findByIdAndUpdate(req.params.id, req.body)
     res.redirect('/index')
 });
 
 
 /// CREATE ///
 router.post('/', async (req, res) => {
-    await Deck.create(req.body).catch((error) => errorHandler(error, res))
+    await Cards.create(req.body).catch((error) => errorHandler(error, res))
     res.redirect('/')
 });
 
 
 /// EDIT ///
 router.get('/:id/edit', async (req, res) => {
-    const decks = await Deck.findById(req.params.id).catch((error) => errorHandler(error, res))
-        res.render('nscg/edit.ejs', {decks})
+    const cards = await Cards.findById(req.params.id).catch((error) => errorHandler(error, res))
+        res.render('nscg/edit.ejs', {cards})
 });
 
 
 /// SHOW ///
 router.get('/:id', async (req, res) => {
-    const decks = await Deck.findById(req.params.id).catch((error) => errorHandler(error, res))
-    res.render('nscg/show.ejs', {decks})
+    const cards = await Cards.findById(req.params.id).catch((error) => errorHandler(error, res))
+    res.render('nscg/show.ejs', {cards})
 });
 
 
