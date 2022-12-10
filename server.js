@@ -6,8 +6,9 @@ require('dotenv').config();
 const express = require('express');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
-const cardsRouter = require('./controllers/nscg')
-const userRouter = require('./controllers/user')
+const cardsRouter = require('./controllers/nscg');
+const userRouter = require('./controllers/user');
+
 
 /// Create express app ///
 const app = express();
