@@ -28,9 +28,9 @@ function errorHandler(error, res) {
 // Routes - INDUCES
 ///////////////////////////////////////////////
 /// SEED ///
-router.get('/seed', (req, res) => {
+// router.get('/seed', (req, res) => {
 
-});
+// });
 
 
 
@@ -59,14 +59,14 @@ router.delete('/:id', async (req, res) => {
 /// UPDATE ///
 router.put('/:id', async (req, res) => {
     await Deck.findByIdAndUpdate(req.params.id, req.body)
-    res.redirect('/nscg')
+    res.redirect('/index')
 });
 
 
 /// CREATE ///
 router.post('/', async (req, res) => {
     await Deck.create(req.body).catch((error) => errorHandler(error, res))
-    res.redirect('/nscg')
+    res.redirect('/')
 });
 
 
