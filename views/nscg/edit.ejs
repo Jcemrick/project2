@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Upgrade <%= decks.name %></title>
+</head>
+<body>
+    <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
+    <h1> <%= decks.name %> </h1>
+    <form action="/index/<%= decks._id %>?_method=PUT" method="POST">
+        <p>Attack: </p><input type="text" name="attack" value="<%= decks.attack %>">
+        <p>Defense: </p><input type="text" name="defense" value="<%= decks.defense %>"><br>
+        <input type="submit" value="Upgrade Now!">
+    </form>
+</body>
+</html>
