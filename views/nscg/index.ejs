@@ -8,7 +8,7 @@
     <header class="indexheader"> 
         <h1>Named Space Card Game</h1>
         <div class="headerlink">
-        <a href="./new.ejs"><button>Card Shop</button></a>
+        <a href="index/new"><button>Card Shop</button></a>
         <a href="./show.ejs"><button>Card Database</button></a>
         <a href=""><button>Account</button></a>
         </div>
@@ -16,14 +16,14 @@
     <div class="container">
         <% decks.forEach((deck, index) => { %>
         <div class="card">
-            <img src="../../public/blueprint.jpeg" alt="cardimage">
-            <a href="/index/<%= deck._id %>"><button>
+            <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
+            <button><a href="/index/<%= deck._id %>">
                 <div class="cardcontainer">
                     <h4> <%= deck.name %> </h4>
                     <p> Attack: <%= deck.attack %> </p>
                     <p> Defense: <%= deck.defense %> </p>
                 </div>
-            </button></a>
+            </a></button>
         </div>
         <% }) %>
     </div>
