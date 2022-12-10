@@ -14,14 +14,14 @@
         </div>
     </header>
     <div class="container">
-        <% decks.forEach((deck, index) => { %>
+        <% cards.forEach((deck, index) => { %>
         <div class="card">
             <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
-            <button><a href="/index/<%= deck._id %>">
+            <button><a href="/index/<%= card._id %>">
                 <div class="cardcontainer">
-                    <h4> <%= deck.name %> </h4>
-                    <p> Attack: <%= deck.attack %> </p>
-                    <p> Defense: <%= deck.defense %> </p>
+                    <h4> <%= card.name %> </h4>
+                    <p> Attack: <%= card.attack %> </p>
+                    <p> Defense: <%= card.defense %> </p>
                 </div>
             </a></button>
         </div>

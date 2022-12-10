@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs') %>
-    <title><%= decks.name %> Info</title>
+    <title><%= cards.name %> Info</title>
 </head>
 <body>
     <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
-    <h1> <%= decks.name %> </h1>
-    <p> Attack: <%= decks.attack %> </p>
-    <p> Defense: <%= decks.defense %> </p>
-    <p> Description: <%= decks.description %> </p>
-    <a href="/index/<%= decks._id %>/edit" title="Upgrade"><img src="../../public/wrench.png" width="1.5%"></a>
+    <h1> <%= cards.name %> </h1>
+    <p> Attack: <%= cards.attack %> </p>
+    <p> Defense: <%= cards.defense %> </p>
+    <p> Description: <%= cards.description %> </p>
+    <a href="/index/<%= cards._id %>/edit" title="Upgrade"><img src="../../public/wrench.png" width="1.5%"></a>
     <a href="/index" title="Home"><img src="https://www.clipartmax.com/png/small/4-41237_free-icons-png-new-home-icon.png" width="2%"></a>
 </body>
 </html>
