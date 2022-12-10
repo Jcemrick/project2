@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////
 require('dotenv').config();
 const mongoose = require('./connection');
-const Deck = require('./nscg');
+const Cards = require('./nscg');
 
 // Setting up variables to create random cards for seed deck
 const randomNumber = function() { return Math.floor(Math.random() * 25) };
@@ -16,11 +16,8 @@ const newDeck = function() {
             name: `Card ${i+1}`, 
             attack: randomNumber(), 
             defense: randomNumber(), 
-            cardId: i+1,
             description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-            optio, eaque rerum!`
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum`
         })
     }
     return newDeckData
@@ -30,14 +27,11 @@ const newDeck = function() {
 
 mongoose.connection.on('open', () => {
     // Data defined
-            // const seedDeck = [
-            //     { cards: newDeck()}
-            // ]
-            newDeck()
+        newDeck()
     // Delete the previous data
     const seedDB = async () => {
-        await Deck.deleteMany({});
-        await Deck.insertMany(newDeck());
+        await Cards.deleteMany({});
+        await Cards.insertMany(newDeck());
     }
     seedDB().then(() => {
         mongoose.connection.close();

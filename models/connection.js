@@ -34,7 +34,7 @@ mongoose.connect(DATABASE_URL, CONFIG);
 mongoose.connection
 .on('open', () => console.log("Connected to MongoDB!"))
 .on('close', () => console.log("Disconnected from MongoDB!"))
-.on('error', () => console.log(error))
+.on('error', (error) => console.log(error))
 
 
 
