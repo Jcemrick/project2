@@ -35,7 +35,7 @@ app.use('/login', userRouter)
 ///////////////////////////////////////////////
 
 app.get('/', (req, res) => {
-    res.redirect('/login')
+    res.redirect('/index')
 });
 
 
