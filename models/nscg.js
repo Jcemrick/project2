@@ -11,8 +11,10 @@ const { Schema , model} = mongoose;
 
 const cardSchema = new Schema({
     name: {type: String, required: true},
+    image: {type: String, require: true},
     attack: {type: Number, required: true},
     defense: {type: Number, required: true},
+    type: {type: String, required: true},
     description: {type: String, required: true}
 });
 

@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////
 
 const express = require('express');
-const Deck = require('../models/nscg')
+const Cards = require('../models/nscg')
 
 
 ///////////////////////////////////////////////

@@ -15,20 +15,23 @@
     <div class="container">
         <% cards.forEach((card, index) => { %>
         <div class="card">
-            <img class="dummy" src="../../public/blueprint.jpeg" alt="cardimage">
-            <button><a href="/index/<%= card._id %>">
-                <div class="cardcontainer">
+                <div class="cardheader">
+                    <img class="cardimage" src=<%= card.image %> alt="cardimage">
                     <h4> <%= card.name %> </h4>
-                    <p> Attack: <%= card.attack %> </p>
-                    <p> Defense: <%= card.defense %> </p>
                 </div>
-            </a></button>
+
+                <div class="cardbody">
+                <p> Attack: <%= card.attack %> </p>
+                <p> Defense: <%= card.defense %> </p>
+                <p> Type: <%= card.type %> </p>
+                </div>
+
+                <div class="cardfooter">
+                <button><a href="/index/<%=card._id%>">Inspect</a></button>
+                </div>
         </div>
         <% }) %>
     </div>
-    <div>
-        <p id="description">
-        </p>
     </div>
 </body>
 </html>
