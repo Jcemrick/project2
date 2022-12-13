@@ -49,7 +49,7 @@ router.get('/new', (req, res) => {
 /// DESTROY ///
 router.delete('/:id', async (req, res) => {
     await Cards.findByIdAndRemove(req.params.id).catch((error) => errorHandler (error, res))
-    res.redirect('/nscg')
+    res.redirect('/index')
 });
 
 
@@ -63,7 +63,7 @@ router.put('/:id', async (req, res) => {
 /// CREATE ///
 router.post('/', async (req, res) => {
     await Cards.create(req.body).catch((error) => errorHandler(error, res))
-    res.redirect('/')
+    res.redirect('/index')
 });
 
 
