@@ -8,21 +8,50 @@
     <header class="indexheader"> 
         <h1> <%= cards.name %> </h1>
         <div class="headerlink">
-        <a href="/index/<%= cards._id %>/edit"><button>Upgrade</button></a>    
+        <a href="/"><button>Return</button></a>   
         <a href="/index/new"><button>Card Shop</button></a>
         <a href=""><button>Account</button></a>
         </div>
     </header>
-    <img class="showimg" src="../../public/blueprint.jpeg" alt="cardimage"> 
-    <div class="container">
-        <div class="card">
-                <div class="cardcontainer">
-                    <p> Attack: <%= cards.attack %> </p>
-                    <p> Defense: <%= cards.defense %> </p>
-                    <p> Description: <%= cards.description %> </p>
+    <div class="containershow">
+
+        <div class="cardshow">
+            <div class="cardheader">
+                <img class="cardimage" src=<%= cards.image %> alt="cardimage">
+                <h4> <%= cards.name %> </h4>
+            </div>
+
+            <div class="cardbody">
+            <p> Attack: <%= cards.attack %> </p>
+            <p> Defense: <%= cards.defense %> </p>
+            <p> Type: <%= cards.type %> </p>
+            </div>
+
+            <form id="delete" action="/index/<%= cards._id %>?_method=DELETE" method="POST">
+            </form>
+
+            <div class="cardfooter">
+                <a href="/index/<%= cards._id %>/edit"><button>Upgrade</button></a>
+                <button type="submit" form="delete">Delete</button>
+            </div>
+            </div>
+
+            <div class="cardshow2">
+                
+                <div class="cardheader">
+                    <h4>Description</h4>
+                </div> 
+
+                <div class="cardbody">
+                
+                    <p><%= cards.description %></p>
+                    
                 </div>
-        </div>
+
+                <div class="cardfooter">
+                </div>
+
+            </div>
     </div>
-    <div>
 </body>
 </html>

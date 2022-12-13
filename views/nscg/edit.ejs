@@ -8,19 +8,49 @@
     <header class="indexheader"> 
         <h1> <%= cards.name %> </h1>
         <div class="headerlink">
-            <a href="/index/new"><button>Card Shop</button></a>
-            <a href=""><button>Account</button></a>
+        <a href="/"><button>Return</button></a>   
+        <a href="/index/new"><button>Card Shop</button></a>
+        <a href=""><button>Account</button></a>
         </div>
     </header>
-    <img class="showimg" src="../../public/blueprint.jpeg" alt="cardimage"> 
-        <div class="container">
-            <div class="cardcontainer">
-                <form action="/index/<%= cards._id %>?_method=PUT" method="POST">
+        <div class="containeredit">
+
+            <div class="cardedit1">
+
+                <div class="cardheader">
+                    <img class="cardimage" src=<%= cards.image %> alt="cardimage">
+                    <h4> <%= cards.name %> </h4>
+                </div>
+    
+                <div class="cardbody">
+                <p> Attack: <%= cards.attack %> </p>
+                <p> Defense: <%= cards.defense %> </p>
+                <p> Type: <%= cards.type %> </p>
+                </div>
+    
+                <div class="cardfooter">
+                </div>
+                </div>
+
+            <div class="cardedit2">
+                
+                <div class="cardheader">
+                </div> 
+
+                <div class="cardbody">
+                <form id="upgrade" action="/index/<%= cards._id %>?_method=PUT" method="POST">
+                    <p>Name: </p><input type="text" name="name" value="<%= cards.name %>">
                     <p>Attack: </p><input type="text" name="attack" value="<%= cards.attack %>">
-                    <p>Defense: </p><input type="text" name="defense" value="<%= cards.defense %>"><br>
-                    <input type="submit" value="Upgrade Now!">
-                    <a href="/index/"><button>Cancel</button></a>
+                    <p>Defense: </p><input type="text" name="defense" value="<%= cards.defense %>">
+                    <p>Type: </p><input type="text" name="type" value="<%= cards.type %>">
                 </form>
+                </div>
+
+                <div class="cardfooter">
+                    <button type="submit" form="upgrade">Upgrade Now!</button>
+                    <a href="/index/"><button>Cancel</button></a>
+                </div>
+
             </div>
         </div>
 </body>

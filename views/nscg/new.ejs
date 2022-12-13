@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs') %>
-    <title>Card Shop</title>
+    <title>Card Shop!</title>
 </head>
 <body>
-    <h1>Card Shop</h1>
+    <header class="indexheader"> 
+        <h1>Welcome to the Card Shop!</h1>
+        <div class="headerlink">
+        <a href="/"><button>Return</button></a>   
+        <a href=""><button>Account</button></a>
+        </div>
+    </header>
+    <div class="container">
+
+    <div class="cardnew">
+
+        <div class="cardheader">
+            <h4> New Discovery! </h4>
+        </div>
+
+        <div class="cardbody">
+            <form id="discover" action="/index" method="POST">
+                <p>Name: </p><input type="text" name="name" placeholder="Name">
+                <p>Image: </p><input type="url" name="image" placeholder="Image URL">
+                <p>Attack: </p><input type="number" name="attack" placeholder="Attack Power">
+                <p>Defense: </p><input type="number" name="defense" placeholder="Defense Power">
+                <p>Type: </p><input type="text" list="type" name="type" placeholder="Unknown">
+                    <datalist id="type"> 
+                        <option value="Ship">Ship</option>
+                        <option value="Resource Planet">Resource Planet</option>
+                        <option value="Base">Base</option>
+                        <option value="Unknown">Unknown</option>
+                    </datalist>
+            </form>
+        </div>
+
+        <div class="cardfooter">
+        <button type="submit" form="discover">Discover Card!</button>
+        <a href="/"><button>Cancel</button></a>
+        </div>
+
+    </div>
+    </div>
 </body>
 </html>
