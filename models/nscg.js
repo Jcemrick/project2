@@ -15,7 +15,7 @@ const cardSchema = new Schema({
     attack: {type: Number, required: true},
     defense: {type: Number, required: true},
     type: {type: String, required: true},
-    description: {type: String, required: true}
+    description: {type: String}
 });
 
 
