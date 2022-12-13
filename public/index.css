@@ -51,6 +51,8 @@ body {
 }
 
 .cardedit1 {
+    --width: 15rem;
+    --height: calc(var(--width) * 1.4);
     width: var(--width);
     height: var(--height);
     background: #002855;
@@ -65,6 +67,8 @@ body {
 }
 
 .cardedit2 {
+    --width: 15rem;
+    --height: calc(var(--width) * 1.4);
     width: var(--width);
     height: var(--height);
     background: #002855;
@@ -85,6 +89,8 @@ body {
 }
 
 .cardshow {
+    --width: 15rem;
+    --height: calc(var(--width) * 1.4);
     width: var(--width);
     height: var(--height);
     background: #002855;
@@ -99,6 +105,8 @@ body {
 }
 
 .cardshow2 {
+    --width: 15rem;
+    --height: calc(var(--width) * 1.4);
     width: var(--width);
     height: var(--height);
     background: #002855;
@@ -126,8 +134,10 @@ body {
 }
 
 .cardnew {
+    --width: 15rem;
+    --height: calc(var(--width) * 1.8);
     width: var(--width);
-    height: calc(--width) * 1.6;
+    height: var(--height);
     background: #002855;
     color: #979dac;
     padding: 1rem;
